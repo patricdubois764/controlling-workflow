@@ -2,10 +2,17 @@ name : Matrix demo
 on: push
 jobs:
   build:
+    continue-on-error: true
     strategy:
         matrix:
-            node-version: [12,14,16]
-            os: [ubuntu-latest, windows-latest]
+          node-version: [12,14,16]
+          os: [ubuntu-latest, windows-latest]
+          include:
+            - node-version: 18
+              os: ubuntu-latest
+          exclude:
+            - node-version: 12
+              os: windows-latest
     runs-on: §{{matrix.os}}
     steps:
         - name: Get Code
