@@ -17,7 +17,7 @@ jobs:
             uses: actions/download-artifact@v4
             with:
                  name: ${{inputs.artifact-name}}
-          - name: List files:
+          - name: list files
             run: ls
           - name: Install NodeJS
             uses: actions/setup-node@v4

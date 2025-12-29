@@ -13,6 +13,5 @@ jobs:
           exclude:
             - node-version: 12
               os: windows-latest
-    uses: ./.github/workflows/resuable-workflow.yml
-
+    runs-on: §{{matrix.os}}
   
